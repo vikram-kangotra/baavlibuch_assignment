@@ -1,5 +1,7 @@
 # Baavlibush Assignment
 
+#### TODO: Error handling
+
 - ## Backend Tier using ExpressJS
 
   - [x] Created a backend tier using ExpressJS.
