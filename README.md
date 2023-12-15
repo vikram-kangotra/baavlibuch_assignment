@@ -1,14 +1,12 @@
 # Baavlibush Assignment
 
-#### TODO: Error handling
-
 - ## Backend Tier using ExpressJS
 
   - [x] Created a backend tier using ExpressJS.
 
 - ## PWA using React
 
-  - [] Created a PWA using React.
+  - [X] Created a PWA using React.
   - [x] Accepts text input (ID), a photo, text input (friendID), and password.
   - [x] Sends data to the backend.
 
