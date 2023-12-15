@@ -29,14 +29,14 @@
 - ## GitHub Repository
 
   - [x] Created a new repo on GitHub.
-  - [] Commits organized into independent branches for the 3 pipelines.
-  - [] Merged branches for submission.
 
 - ## Docker Containers
     
-  - [] Containerise each of the components on independent docker containers
+  - [X] Containerise each of the components on independent docker containers
 
 ## How to Run
+
+### Manual
 
 1. Clone the repository:
 
@@ -70,3 +70,21 @@ python manage.py runserver
 ```
 
 5. Open browser and search `http://localhost:3000/`
+
+### Using Docker
+
+1. Build docker images
+
+```bash
+docker build -t ba_client client
+docker build -t ba_server server
+docker build -t ba_django_server django_server
+```
+
+2. Run docker images
+
+```bash
+sudo docker run --network host --rm -it ba_client:latest
+sudo docker run --network host --rm -it ba_server:latest
+sudo docker run --network host --rm -it ba_django_server:latest
+```
