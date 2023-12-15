@@ -3,7 +3,7 @@ import Form from '../components/form';
 
 const Home = () => {
     return (
-        <div>
+        <div className='flex items-center justify-center h-screen bg-slate-100'>
             <Form />
         </div>
     );

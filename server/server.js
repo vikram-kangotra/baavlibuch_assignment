@@ -36,7 +36,7 @@ const upload = multer({ storage: storage });
 app.post('/upload', upload.single('photo'), async (req, res) => {
     try {
 
-        const connection = await Connection.findOne();
+        let connection = await Connection.findOne();
         if (!connection) {
             connection = new Connection();
         }
@@ -49,12 +49,11 @@ app.post('/upload', upload.single('photo'), async (req, res) => {
 
         const existingUser = await User.findOne({ id });
         if (existingUser) {
-            console.log(`User ${id} already exists`);
-            return res.status(409).send('User already exists');
+            existingUser.friendList.push(friendId);
+        } else {
+            const user = new User({ id, friendId });
+            await user.save();
         }
-
-        const user = new User({ id, friendId });
-        await user.save();
 
         const friend = await User.findOne({ id: friendId });
         if (friend) {
