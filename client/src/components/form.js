@@ -12,11 +12,11 @@ const Form = () => {
         e.preventDefault();
 
         try {
-            const formData = new FormData();
-
             if (!id || !friendId || !password || !photo) {
                 alert('Please fill out all fields');
             }
+
+            let formData = new FormData();
 
             formData.append('id', id);
             formData.append('friendId', friendId);
